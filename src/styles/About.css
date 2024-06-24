@@ -1,0 +1,59 @@
+/* About.css */
+
+.about-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-description {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.team {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-member-img:hover {
+  transform: scale(1.1);
+}
+
+.member-details {
+  margin-top: 10px;
+}
+
+.member-name {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.member-role {
+  font-size: 14px;
+  color: #666;
+}
