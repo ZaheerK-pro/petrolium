@@ -21,7 +21,7 @@ A simple React app to for petrolium where we provide some services like Oil chan
 You can access the live version of the app [here](https://subpetrolium.vercel.app/).
 
 ## Author
-Zaheer Khan
+Zaheer Khan <br>
 Developer - Zaheer Khan <br>
 LinkedIn - www.linkedin.com/in/zaheerk1 <br>
 Portfolio - https://zaheerkhan.netlify.app <br>
