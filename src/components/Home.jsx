@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/Home.css';
 import AnimatedGraphic from './AnimatedGraphic'; // Create a separate component for the animated graphic
 import CustomerTestimonials from './CustomerTestimonials'; // Component for displaying customer testimonials
-import FuelImage from '../assets/fuel.webp'; // Import an image asset
+import FuelImage from '../assets/fuel.jpg'; // Import an image asset
 
 const Home = () => {
   return (
