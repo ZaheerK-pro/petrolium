@@ -43,16 +43,39 @@ const Services = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Service booked for ${formData.name} on ${formData.date} at ${formData.time}`);
-    setFormData({ name: '', service: '', date: '', time: '' });
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   alert(`Service booked for ${formData.name} on ${formData.date} at ${formData.time}`);
+  //   setFormData({ name: '', service: '', date: '', time: '' });
+  // };
 
   const handlePriceCalculation = () => {
-    const rate = 95; // Example rate per liter
+    const rate = 95; 
     setPrice(quantity * rate);
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:3000/services', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        alert(`Service booked for ${formData.name} on ${formData.date} at ${formData.time}`);
+        setFormData({ name: '', service: '', date: '', time: '' });
+      } else {
+        alert('Failed to book service. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Error booking service:', error);
+      alert('Failed to book service. Please try again later.');
+    }
+  };
+  
 
   return (
     <div className="services-container">

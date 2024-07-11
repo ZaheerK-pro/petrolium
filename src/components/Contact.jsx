@@ -12,11 +12,34 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   alert('Thank you for your message!');
+  //   setFormData({ name: '', email: '', message: '' });
+  // };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Thank you for your message!');
-    setFormData({ name: '', email: '', message: '' });
+    try {
+      const response = await fetch('http://localhost:3000/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        alert('Thank you for your message!');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        alert('Failed to send message. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      alert('Failed to send message. Please try again later.');
+    }
   };
+  
 
   return (
     <div className="contact-page">

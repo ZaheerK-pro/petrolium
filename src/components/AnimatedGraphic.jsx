@@ -1,35 +1,33 @@
-// Example of AnimatedGraphic.jsx
 import React from 'react';
+import '../styles/About.css';
+import TeamMember1 from '../assets/team-member-1.jpg'; // Example team member image
+import TeamMember2 from '../assets/team-member-2.avif'; // Example team member image
 
-const AnimatedGraphic = () => {
+const About = () => {
   return (
-    <div className="animated-graphic">
-      <svg
-        width="100"
-        height="100"
-        viewBox="0 0 100 100"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="50"
-          cy="50"
-          r="45"
-          stroke="#ff6b6b"
-          strokeWidth="5"
-          fill="none"
-          strokeDasharray="283"
-          strokeDashoffset="0"
-        >
-          <animate
-            attributeName="stroke-dashoffset"
-            values="283;0"
-            dur="2s"
-            repeatCount="indefinite"
-          />
-        </circle>
-      </svg>
+    <div className="about-page">
+      <h2 className="section-title">About Us</h2>
+      <p className="about-description">
+        We are committed to providing the best fuel and car services in town.
+      </p>
+      <div className="team">
+        <div className="team-member">
+          <img src={TeamMember1} alt="Team Member 1" className="team-member-img" />
+          <div className="member-details">
+            <h4 className="member-name">Zaheer Khan</h4>
+            <p className="member-role">Founder & CEO</p>
+          </div>
+        </div>
+        <div className="team-member">
+          <img src={TeamMember2} alt="Team Member 2" className="team-member-img" />
+          <div className="member-details">
+            <h4 className="member-name">Jane Smith</h4>
+            <p className="member-role">Chief Mechanic</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default AnimatedGraphic;
+export default About;
