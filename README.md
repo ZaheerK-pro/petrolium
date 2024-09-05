@@ -1,7 +1,7 @@
 # Petrolium Shop
 
 ## Description
-A simple React app to for petrolium where we provide some services like Oil change, Tire change, fuel refill, car wash and more.
+A simple React app for petrolium where we provide some online services like Oil change, Tire change, fuel refill, car wash and more.
 
 ## Instructions to Run Locally
 1. Clone the repository:
