@@ -20,7 +20,7 @@ const AppDataSource = new DataSource({
     host: "localhost",
     port: 5432,
     username: "postgres",
-    password: "zaheer@123",
+    password: "postgres",
     database: "subpetro",
     entities: [Service, Contact],
     synchronize: true,
