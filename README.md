@@ -18,7 +18,7 @@ A simple React app for petrolium where we provide some online services like Oil 
 5. Open your browser and go to `http://localhost:3000`.
 
 ## Hosted Version
-You can access the live version of the app [here](https://subpetrolium.vercel.app/).
+You can access the live version of the app [here](https://sbpetrolium.vercel.app/).
 
 ## Author
 Zaheer Khan <br>
