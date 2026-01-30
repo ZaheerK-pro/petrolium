@@ -43,8 +43,11 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
-      <h2 className="section-title">Contact Us</h2>
-      <p className="section-description">Have questions? We're here to help!</p>
+      <div className="contact-hero">
+        <span className="section-label">Get in touch</span>
+        <h2 className="section-title">Contact Us</h2>
+        <p className="section-description">Have questions? We're here to help!</p>
+      </div>
       <form onSubmit={handleSubmit} className="contact-form">
         <input
           type="text"

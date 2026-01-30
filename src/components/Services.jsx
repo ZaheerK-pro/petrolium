@@ -78,8 +78,12 @@ const Services = () => {
   
 
   return (
-    <div className="services-container">
-      <h2 className="section-title">Our Services</h2>
+    <div className="services-page">
+      <div className="services-hero">
+        <span className="section-label">What we offer</span>
+        <h2 className="section-title">Our Services</h2>
+      </div>
+      <div className="services-container">
       <div className="services-grid">
         {servicesData.map((service, index) => (
           <div className="service" key={index}>
@@ -149,6 +153,7 @@ const Services = () => {
         {price !== null && (
           <p className="price-display">Total Price: ₹{price.toFixed(2)}</p>
         )}
+      </div>
       </div>
     </div>
   );

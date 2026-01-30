@@ -45,9 +45,9 @@ function App() {
 
   useEffect(() => {
     const theme = localStorage.getItem('theme');
-    if (theme) {
-      setIsDarkMode(theme === 'dark');
-    }
+    const dark = theme === 'dark';
+    setIsDarkMode(dark);
+    document.body.classList.toggle('dark-mode', dark);
   }, []);
 
   const toggleTheme = () => {

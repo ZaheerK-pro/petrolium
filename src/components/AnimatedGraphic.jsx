@@ -1,33 +1,22 @@
 import React from 'react';
-import '../styles/About.css';
-import TeamMember1 from '../assets/team-member-1.jpg'; // Example team member image
-import TeamMember2 from '../assets/team-member-2.avif'; // Example team member image
+import '../styles/AnimatedGraphic.css';
 
-const About = () => {
+const AnimatedGraphic = () => {
   return (
-    <div className="about-page">
-      <h2 className="section-title">About Us</h2>
-      <p className="about-description">
-        We are committed to providing the best fuel and car services in town.
-      </p>
-      <div className="team">
-        <div className="team-member">
-          <img src={TeamMember1} alt="Team Member 1" className="team-member-img" />
-          <div className="member-details">
-            <h4 className="member-name">Zaheer Khan</h4>
-            <p className="member-role">Founder & CEO</p>
-          </div>
-        </div>
-        <div className="team-member">
-          <img src={TeamMember2} alt="Team Member 2" className="team-member-img" />
-          <div className="member-details">
-            <h4 className="member-name">Jane Smith</h4>
-            <p className="member-role">Chief Mechanic</p>
-          </div>
-        </div>
+    <div className="animated-graphic" aria-hidden="true">
+      <div className="graphic-inner">
+        <div className="fuel-drop fuel-drop-1" />
+        <div className="fuel-drop fuel-drop-2" />
+        <div className="fuel-drop fuel-drop-3" />
+        <svg className="pump-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="16" y="20" width="32" height="36" rx="4" stroke="currentColor" strokeWidth="3" fill="none" />
+          <path d="M28 20V12h8v8M32 32v12M28 44h8" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+          <circle cx="32" cy="38" r="4" stroke="currentColor" strokeWidth="2" fill="none" />
+          <path d="M48 28h6l4 8v8h-10V28z" stroke="currentColor" strokeWidth="2" fill="none" />
+        </svg>
       </div>
     </div>
   );
 };
 
-export default About;
+export default AnimatedGraphic;

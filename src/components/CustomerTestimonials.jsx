@@ -1,103 +1,54 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/Home.css';
 
 const CustomerTestimonials = () => {
   const testimonials = [
-    { id: 1, text: "Great service! Fast and reliable." },
-    { id: 2, text: "Love the discounts on premium fuel!" },
-    { id: 3, text: "Convenient locations and friendly staff." }
+    { id: 1, text: 'Great service! Fast and reliable.', name: 'Raj K.', role: 'Regular Customer' },
+    { id: 2, text: 'Love the discounts on premium fuel!', name: 'Priya M.', role: 'Premium Member' },
+    { id: 3, text: 'Convenient locations and friendly staff.', name: 'Amit S.', role: 'Local Driver' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 3000);
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
   return (
-    <div style={styles.testimonials}>
-      <h2 style={styles.heading}>What Our Customers Say</h2>
-      <ul style={styles.list}>
-        {testimonials.map((testimonial, index) => (
-          <li
-            key={testimonial.id}
-            style={{
-              ...styles.listItem,
-              ...(index === currentIndex ? styles.activeItem : {})
-            }}
+    <div className="testimonials-carousel">
+      <h2 className="testimonials-heading">What Our Customers Say</h2>
+      <div className="testimonial-slides">
+        {testimonials.map((item, index) => (
+          <div
+            key={item.id}
+            className={`testimonial-slide ${index === currentIndex ? 'active' : ''}`}
+            aria-hidden={index !== currentIndex}
           >
-            {testimonial.text}
-          </li>
+            <blockquote className="testimonial-quote">"{item.text}"</blockquote>
+            <div className="testimonial-author">
+              <span className="author-name">{item.name}</span>
+              <span className="author-role">{item.role}</span>
+            </div>
+          </div>
         ))}
-      </ul>
-      <div style={styles.navigation}>
+      </div>
+      <div className="testimonial-dots" role="tablist" aria-label="Testimonial navigation">
         {testimonials.map((_, index) => (
-          <span
+          <button
             key={index}
-            style={{
-              ...styles.navDot,
-              ...(index === currentIndex ? styles.activeNavDot : {})
-            }}
+            type="button"
+            className={`testimonial-dot ${index === currentIndex ? 'active' : ''}`}
+            aria-label={`Go to testimonial ${index + 1}`}
+            aria-selected={index === currentIndex}
             onClick={() => setCurrentIndex(index)}
           />
         ))}
       </div>
     </div>
   );
-};
-
-const styles = {
-  testimonials: {
-    width: '80%',
-    margin: 'auto',
-    padding: '20px',
-    textAlign: 'center',
-    borderRadius: '10px',
-    backgroundColor: '#f9f9f9',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-  },
-  heading: {
-    fontSize: '24px',
-    marginBottom: '20px',
-    color: '#333'
-  },
-  list: {
-    listStyle: 'none',
-    padding: 0,
-    margin: 0,
-    position: 'relative',
-    height: '50px',
-    overflow: 'hidden'
-  },
-  listItem: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    opacity: 0,
-    transition: 'opacity 1s ease-in-out'
-  },
-  activeItem: {
-    opacity: 1
-  },
-  navigation: {
-    marginTop: '20px'
-  },
-  navDot: {
-    display: 'inline-block',
-    width: '10px',
-    height: '10px',
-    margin: '0 5px',
-    borderRadius: '50%',
-    backgroundColor: '#ccc',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s ease'
-  },
-  activeNavDot: {
-    backgroundColor: '#333'
-  }
 };
 
 export default CustomerTestimonials;

@@ -1,116 +1,315 @@
-/* Services.css */
+/* Services page – cool UI */
+.services-hero {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(13, 148, 136, 0.12) 0%, rgba(245, 158, 11, 0.06) 100%);
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+}
+
+.services-hero .section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.services-hero .section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin: 0;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  position: relative;
+}
+
+body.dark-mode .services-hero .section-title {
+  color: var(--color-primary-light);
+}
 
 .services-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 1.5rem 3rem;
+  animation: fadeIn 0.5s ease-out;
 }
 
-.section-title {
-  font-size: 28px;
-  color: #333;
-  margin-bottom: 20px;
+.services-container > .section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+body.dark-mode .services-container > .section-title {
+  color: var(--color-primary-light);
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .service {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 32px rgba(13, 148, 136, 0.1);
   overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+body.dark-mode .service {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 .service:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(13, 148, 136, 0.18);
+}
+
+body.dark-mode .service:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
 }
 
 .service-image {
   width: 100%;
-  height: 200px; /* Adjust height as necessary */
+  height: 200px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .service:hover .service-image {
-  transform: scale(1.05); /* Example of zoom effect on hover */
+  transform: scale(1.08);
 }
 
 .service-info {
+  padding: 1.25rem;
   text-align: center;
 }
 
 .service-name {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin: 0 0 0.5rem;
+}
+
+body.dark-mode .service-name {
+  color: var(--color-primary-light);
 }
 
 .service-description {
-  font-size: 14px;
-  color: #666;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.appointment-section,
+.calculator {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  box-shadow: 0 8px 32px rgba(13, 148, 136, 0.1);
+  margin-top: 2rem;
+  animation: slideUp 0.5s ease-out both;
+}
+
+body.dark-mode .appointment-section,
+body.dark-mode .calculator {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 .appointment-section {
-  margin-top: 50px;
+  animation-delay: 0.1s;
+}
+
+.calculator {
+  animation-delay: 0.15s;
+}
+
+.appointment-section .section-title,
+.calculator .section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: 1.25rem;
+}
+
+body.dark-mode .appointment-section .section-title,
+body.dark-mode .calculator .section-title {
+  color: var(--color-primary-light);
 }
 
 .appointment-form {
   display: grid;
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 560px;
 }
 
 .form-input {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+}
+
+.form-input::placeholder {
+  color: var(--color-text);
+  opacity: 0.6;
+}
+
+.appointment-form .submit-button {
+  grid-column: 1 / -1;
+  max-width: 200px;
+  margin-top: 0.5rem;
 }
 
 .submit-button {
-  background-color: #007bff;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
   border: none;
-  border-radius: 5px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .submit-button:hover {
-  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
 }
 
-.calculator {
-  margin-top: 50px;
+.calculator .form-input {
+  max-width: 240px;
+  margin-bottom: 1rem;
 }
 
 .calculate-button {
-  background-color: #28a745;
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
   color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
   border: none;
-  border-radius: 5px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .calculate-button:hover {
-  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
 }
 
 .price-display {
-  font-size: 18px;
-  margin-top: 10px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  color: var(--color-primary-dark);
+}
+
+body.dark-mode .price-display {
+  color: var(--color-primary-light);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .services-hero {
+    padding: 2rem 1rem;
+  }
+  .services-hero .section-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+  .services-container {
+    padding: 0 1rem 2rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .service-image {
+    height: 180px;
+  }
+  .appointment-section,
+  .calculator {
+    padding: 1.5rem 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .appointment-form {
+    grid-template-columns: 1fr;
+  }
+  .appointment-form .submit-button {
+    max-width: 100%;
+    min-height: 48px;
+  }
+  .calculator .form-input {
+    max-width: 100%;
+  }
+  .calculate-button {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-container {
+    padding: 0 0.75rem 1.5rem;
+  }
+  .service-info {
+    padding: 1rem;
+  }
+  .service-name {
+    font-size: 1.1rem;
+  }
 }
