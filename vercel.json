@@ -22,7 +22,7 @@
       "dest": "/subPetro-backend/api/$1.js"
     },
     {
-      "src": "/(.*)",
+      "src": "/((?!static/)(?!.*\\.).*)",
       "dest": "/index.html"
     }
   ]
