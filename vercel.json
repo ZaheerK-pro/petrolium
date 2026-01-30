@@ -1,5 +1,8 @@
 {
   "version": 2,
+  "env": {
+    "BROWSERSLIST_IGNORE_OLD_DATA": "true"
+  },
   "builds": [
     {
       "src": "subPetro-backend/api/**/*.js",

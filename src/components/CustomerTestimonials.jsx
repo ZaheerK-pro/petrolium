@@ -40,9 +40,10 @@ const CustomerTestimonials = () => {
           <button
             key={index}
             type="button"
-            className={`testimonial-dot ${index === currentIndex ? 'active' : ''}`}
-            aria-label={`Go to testimonial ${index + 1}`}
+            role="tab"
             aria-selected={index === currentIndex}
+            aria-label={`Go to testimonial ${index + 1}`}
+            className={`testimonial-dot ${index === currentIndex ? 'active' : ''}`}
             onClick={() => setCurrentIndex(index)}
           />
         ))}
